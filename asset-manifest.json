@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/static/js/main.587a045a.chunk.js",
-    "main.js.map": "/static/js/main.587a045a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.019f1e69.js",
-    "runtime-main.js.map": "/static/js/runtime-main.019f1e69.js.map",
-    "static/js/2.60ced003.chunk.js": "/static/js/2.60ced003.chunk.js",
-    "static/js/2.60ced003.chunk.js.map": "/static/js/2.60ced003.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.7a425d5954617afdeadd85ddf79aeda4.js": "/precache-manifest.7a425d5954617afdeadd85ddf79aeda4.js",
-    "service-worker.js": "/service-worker.js",
-    "static/js/2.60ced003.chunk.js.LICENSE.txt": "/static/js/2.60ced003.chunk.js.LICENSE.txt"
+    "main.js": "/hiragana-card-game/static/js/main.587a045a.chunk.js",
+    "main.js.map": "/hiragana-card-game/static/js/main.587a045a.chunk.js.map",
+    "runtime-main.js": "/hiragana-card-game/static/js/runtime-main.d201db79.js",
+    "runtime-main.js.map": "/hiragana-card-game/static/js/runtime-main.d201db79.js.map",
+    "static/js/2.7d8692ad.chunk.js": "/hiragana-card-game/static/js/2.7d8692ad.chunk.js",
+    "static/js/2.7d8692ad.chunk.js.map": "/hiragana-card-game/static/js/2.7d8692ad.chunk.js.map",
+    "index.html": "/hiragana-card-game/index.html",
+    "precache-manifest.1d1fae056ebafba1af39cf543d386dea.js": "/hiragana-card-game/precache-manifest.1d1fae056ebafba1af39cf543d386dea.js",
+    "service-worker.js": "/hiragana-card-game/service-worker.js",
+    "static/js/2.7d8692ad.chunk.js.LICENSE.txt": "/hiragana-card-game/static/js/2.7d8692ad.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.019f1e69.js",
-    "static/js/2.60ced003.chunk.js",
+    "static/js/runtime-main.d201db79.js",
+    "static/js/2.7d8692ad.chunk.js",
     "static/js/main.587a045a.chunk.js"
   ]
 }
