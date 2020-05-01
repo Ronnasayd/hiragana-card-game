@@ -99,7 +99,7 @@ const Home = () => {
               }
             }}
           >
-            <audio src={`/sounds/${value.sound}`} type="audio/mpeg"></audio>
+            <audio src={`./sounds/${value.sound}`} type="audio/mpeg"></audio>
             <CardFront>
               <span>{index + 1}</span>
             </CardFront>
