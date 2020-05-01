@@ -8,8 +8,8 @@ import {
   CardFront,
   CardBack,
 } from "./styles";
-import { hiragana } from "../../hiragana";
-import { getRandomArray, duplicateAddID, shuffle } from "../../utils";
+
+import { getRandomSamples } from "../../utils";
 
 const Home = () => {
   const number = 4;
@@ -17,6 +17,7 @@ const Home = () => {
   const [firstCard, setFirstCard] = useState(null);
   const [secondCard, setSecondCard] = useState(null);
   const [hiraganaSamples, setHiraganaSamples] = useState([]);
+  const [hiraganaPicked, setHiraganaPicked] = useState([]);
   const [gameAdvanced, setGameAdvanced] = useState(0);
   const [openedCards, setOpenedCards] = useState([]);
   const [continuos, setContinuos] = useState(0);
@@ -26,17 +27,20 @@ const Home = () => {
     setScore(gameAdvanced * 10 * continuos + score);
 
     if (gameAdvanced === 0) {
-      let randomArray = getRandomArray(number, [...hiragana], []);
-      randomArray = duplicateAddID(randomArray);
-      randomArray = shuffle(randomArray);
-      setHiraganaSamples(randomArray);
+      const [randomSamples, picked] = getRandomSamples(number * 2);
+
+      setHiraganaSamples(randomSamples);
+      setHiraganaPicked(picked);
     }
     if (gameAdvanced % (number * 2) === 0 && gameAdvanced > 0) {
       setTimeout(() => {
-        let randomArray = getRandomArray(number, [...hiragana], []);
-        randomArray = duplicateAddID(randomArray);
-        randomArray = shuffle(randomArray);
-        setHiraganaSamples(randomArray);
+        const [randomSamples, picked] = getRandomSamples(
+          number * 2,
+          hiraganaPicked
+        );
+
+        setHiraganaSamples(randomSamples);
+        setHiraganaPicked(picked);
         setContinuos(0);
         openedCards.forEach((element) => {
           element.style.transform = "rotateY(0deg)";
@@ -60,7 +64,10 @@ const Home = () => {
         setOpenedCards([...openedCards, firstCard.ref, secondCard.ref]);
       } else {
         setTimeout(() => {
-          if (firstCard.ref !== secondCard.ref) {
+          if (
+            openedCards.indexOf(firstCard.ref) === -1 &&
+            openedCards.indexOf(secondCard.ref) === -1
+          ) {
             setContinuos(0);
             firstCard.ref.style.transform = "rotateY(0deg)";
             secondCard.ref.style.transform = "rotateY(0deg)";
@@ -92,12 +99,13 @@ const Home = () => {
               }
             }}
           >
-            <audio src={`./sounds/${value.sound}`} type="audio/mpeg"></audio>
+            <audio src={`/sounds/${value.sound}`} type="audio/mpeg"></audio>
             <CardFront>
               <span>{index + 1}</span>
             </CardFront>
             <CardBack color={value.color}>
               <span>{value.character}</span>
+              <span>{value.romaji}</span>
             </CardBack>
           </Card>
         ))}

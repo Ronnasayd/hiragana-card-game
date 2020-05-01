@@ -33,7 +33,7 @@ export const Card = styled.div`
 `;
 
 export const CardFront = styled.div`
-  background: white;
+  background: linear-gradient(45deg, #210a40, #0089ff);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -42,7 +42,7 @@ export const CardFront = styled.div`
   justify-content: center;
   align-items: center;
   span {
-    color: black;
+    color: rgba(255, 255, 255, 0.87);
     font-size: 2rem;
     text-align: center;
   }
@@ -55,6 +55,7 @@ export const CardBack = styled.div`
   backface-visibility: hidden;
   transform: rotateY(180deg);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   span {
@@ -65,5 +66,8 @@ export const CardBack = styled.div`
     /* color: white; */
     font-size: 2rem;
     text-align: center;
+    &:nth-child(2) {
+      font-size: 1rem;
+    }
   }
 `;
