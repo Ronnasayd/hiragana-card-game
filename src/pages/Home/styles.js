@@ -29,7 +29,7 @@ export const Card = styled.div`
   cursor: pointer;
   transition: all 0.8s;
   transform-style: preserve-3d;
-  /* transform: rotateY(180deg); */
+  transform: rotateY(180deg);
 `;
 
 export const CardFront = styled.div`

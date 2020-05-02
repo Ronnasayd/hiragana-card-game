@@ -24,6 +24,15 @@ const Home = () => {
   const [score, setScore] = useState(0);
 
   useEffect(() => {
+    setTimeout(() => {
+      const cards = document.querySelectorAll(".card");
+      cards.forEach((element) => {
+        element.style.transform = "rotateY(0deg)";
+      });
+    }, 5000);
+  }, []);
+
+  useEffect(() => {
     setScore(gameAdvanced * 10 * continuos + score);
 
     if (gameAdvanced === 0) {
@@ -33,20 +42,20 @@ const Home = () => {
       setHiraganaPicked(picked);
     }
     if (gameAdvanced % (number * 2) === 0 && gameAdvanced > 0) {
-      setTimeout(() => {
-        const [randomSamples, picked] = getRandomSamples(
-          number * 2,
-          hiraganaPicked
-        );
+      const [randomSamples, picked] = getRandomSamples(
+        number * 2,
+        hiraganaPicked
+      );
+      setHiraganaSamples(randomSamples);
+      setHiraganaPicked(picked);
+      setContinuos(0);
 
-        setHiraganaSamples(randomSamples);
-        setHiraganaPicked(picked);
-        setContinuos(0);
+      setTimeout(() => {
         openedCards.forEach((element) => {
           element.style.transform = "rotateY(0deg)";
         });
         setOpenedCards([]);
-      }, 3000);
+      }, 5000);
     }
     // eslint-disable-next-line
   }, [gameAdvanced]);
@@ -84,18 +93,19 @@ const Home = () => {
       <CardContainer numberRowsAndColumns={number} size={300}>
         {hiraganaSamples.map((value, index) => (
           <Card
+            className="card"
             key={index + 1}
             onClick={(e) => {
-              if (flipCounter >= 2) {
-                setSecondCard({ value, ref: e.currentTarget });
-                setFlipCounter(1);
-              } else {
-                setFirstCard({ value, ref: e.currentTarget });
-                setFlipCounter(flipCounter + 1);
-              }
               if (openedCards.indexOf(e.currentTarget) === -1) {
                 e.currentTarget.style.transform = "rotateY(180deg)";
                 e.currentTarget.querySelector("audio").play();
+                if (flipCounter >= 2) {
+                  setSecondCard({ value, ref: e.currentTarget });
+                  setFlipCounter(1);
+                } else {
+                  setFirstCard({ value, ref: e.currentTarget });
+                  setFlipCounter(flipCounter + 1);
+                }
               }
             }}
           >

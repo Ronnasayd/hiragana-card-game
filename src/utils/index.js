@@ -7,7 +7,12 @@ const indexChoice = (distribution) => {
     total += value;
     return ur < total;
   });
-  return arr.indexOf(true);
+
+  return arr.indexOf(true) !== -1 ? arr.indexOf(true) : distribution.length - 1;
+};
+
+export const isInQueue = (sample, sampleArray) => {
+  return sampleArray.map((x) => x.romaji).indexOf(sample.romaji) !== -1;
 };
 
 export const getRandomSamples = (qtd = 8, picked = []) => {
@@ -24,7 +29,7 @@ export const getRandomSamples = (qtd = 8, picked = []) => {
   while (samples.length < qtd) {
     const randomNumber = indexChoice(distribution);
     const element = array[randomNumber];
-    if (samples.indexOf(element) === -1) {
+    if (!isInQueue(element, samples)) {
       samples.push(element);
       picked[randomNumber] += 1;
     }
@@ -39,7 +44,7 @@ export const getRandomSamples = (qtd = 8, picked = []) => {
     newSamples.push(obj2);
   });
 
-  return [shuffle(newSamples), picked];
+  return [shuffle([...newSamples]), picked];
 };
 
 export const shuffle = (array) => {
