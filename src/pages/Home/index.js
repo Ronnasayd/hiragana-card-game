@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-
+import { hiragana_divided } from "../../hiragana";
 import {
   Container,
   CardContainer,
   Title,
+  Table,
   Card,
   CardFront,
   CardBack,
@@ -96,9 +97,9 @@ const Home = () => {
             className="card"
             key={index + 1}
             onClick={(e) => {
+              e.currentTarget.querySelector("audio").play();
               if (openedCards.indexOf(e.currentTarget) === -1) {
                 e.currentTarget.style.transform = "rotateY(180deg)";
-                e.currentTarget.querySelector("audio").play();
                 if (flipCounter >= 2) {
                   setSecondCard({ value, ref: e.currentTarget });
                   setFlipCounter(1);
@@ -120,6 +121,41 @@ const Home = () => {
           </Card>
         ))}
       </CardContainer>
+      <Table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>a</th>
+            <th>i</th>
+            <th>u</th>
+            <th>e</th>
+            <th>o</th>
+          </tr>
+        </thead>
+        <tbody>
+          {hiragana_divided.map((element) => (
+            <tr>
+              <td>{element.letter}</td>
+              {element.hiragana.map((value) => (
+                <td
+                  style={{
+                    background: value?.color,
+                    padding: "12px",
+                    color:
+                      parseInt(
+                        value.color?.match(/hsl\((.+),(.+)%,(.+)%\)/)[3]
+                      ) > 30
+                        ? "#000"
+                        : "#fff",
+                  }}
+                >
+                  {value.character}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </Container>
   );
 };

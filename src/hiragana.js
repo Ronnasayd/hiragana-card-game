@@ -271,8 +271,55 @@ export const hiragana = [
   },
   {
     character: "ん",
-    romaji: "hm",
-    sound: "hm.mp3",
+    romaji: "n",
+    sound: "n.mp3",
     color: "hsl(0, 50%, 20%)",
+  },
+];
+
+export const hiragana_divided = [
+  {
+    letter: "",
+    hiragana: hiragana.slice(0, 5),
+  },
+  {
+    letter: "k",
+    hiragana: hiragana.slice(5, 10),
+  },
+  {
+    letter: "s",
+    hiragana: hiragana.slice(10, 15),
+  },
+  {
+    letter: "t",
+    hiragana: hiragana.slice(15, 20),
+  },
+  {
+    letter: "n",
+    hiragana: hiragana.slice(20, 25),
+  },
+  {
+    letter: "h",
+    hiragana: hiragana.slice(25, 30),
+  },
+  {
+    letter: "m",
+    hiragana: hiragana.slice(30, 35),
+  },
+  {
+    letter: "y",
+    hiragana: [hiragana[35], {}, hiragana[36], {}, hiragana[37]],
+  },
+  {
+    letter: "r",
+    hiragana: hiragana.slice(38, 43),
+  },
+  {
+    letter: "w",
+    hiragana: [hiragana[43], {}, {}, {}, hiragana[44]],
+  },
+  {
+    letter: "n",
+    hiragana: [hiragana[45], {}, {}, {}, {}],
   },
 ];

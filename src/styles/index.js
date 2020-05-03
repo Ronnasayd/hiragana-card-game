@@ -8,9 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing:border-box; 
   outline:none;
 }
-#root,body,html{
-  height:100%;
-}
+
 #root{
   background:#121212;
   font-size:10px;
@@ -18,5 +16,6 @@ export const GlobalStyle = createGlobalStyle`
   display:flex;
   justify-content:center;
   align-items:center;
+  height:100%;
 }
 `;

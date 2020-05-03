@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 60px;
 `;
 
 export const Title = styled.h1`
@@ -58,9 +59,10 @@ export const CardBack = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 3px solid #eee;
   span {
     color: ${(props) =>
-      parseInt(props.color.match(/hsl\((.+),(.+)%,(.+)%\)/)[3]) > 40
+      parseInt(props.color.match(/hsl\((.+),(.+)%,(.+)%\)/)[3]) > 30
         ? "#000"
         : "#fff"};
     /* color: white; */
@@ -69,5 +71,18 @@ export const CardBack = styled.div`
     &:nth-child(2) {
       font-size: 1rem;
     }
+  }
+`;
+
+export const Table = styled.table`
+  color: white;
+  font-size: 20px;
+  margin: 20px 0px;
+
+  th {
+    font-size: 1rem;
+  }
+  td:nth-child(1) {
+    font-size: 1rem;
   }
 `;
