@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3125b7b4446cf5697054671e9e2a2950",
+    "revision": "ab0297670c3ae46ffa9ea3a25b9c75e9",
     "url": "/hiragana-card-game/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hiragana-card-game/static/js/2.07fb87d1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a95fdeb3785f0bc25ba5",
-    "url": "/hiragana-card-game/static/js/main.4e6e6d91.chunk.js"
+    "revision": "cad30d46f16f360dfac3",
+    "url": "/hiragana-card-game/static/js/main.f2a336fb.chunk.js"
   },
   {
     "revision": "a948c7550cf7e03ffa5d",

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/hiragana-card-game/precache-manifest.0744d6ff2b784da562c00e89e2606e0e.js"
+  "/hiragana-card-game/precache-manifest.25257777f4436c78cda8143e6732bd88.js"
 );
 
 self.addEventListener('message', (event) => {
